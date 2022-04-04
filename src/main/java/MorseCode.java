@@ -1,6 +1,6 @@
 public class MorseCode
 {
-    MorseAlphabetConversion conversion;
+    private MorseAlphabetConversion conversion;
     public MorseCode(MorseAlphabetConversion conversion)
     {
         this.conversion = conversion;
@@ -8,16 +8,16 @@ public class MorseCode
 
     public String convertToMorse(String input)
     {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int letter = 0; letter < input.length(); letter++)
         {
             String codeEquivalent = conversion.getMorse(String.valueOf(input.charAt(letter)));
             if (codeEquivalent != null)
             {
-                result += (" " + codeEquivalent);
+                result.append(" " + codeEquivalent);
             }
         }
-        return result.trim();
+        return result.toString().trim();
     }
 
     public String convertToABC(String input)

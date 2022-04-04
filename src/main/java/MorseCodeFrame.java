@@ -9,10 +9,10 @@ public class MorseCodeFrame extends JFrame
     private final MorseCodePresenter presenter;
     private final JTextField inputEnglishField;
     private final JTextField inputMorseField;
-    private final JButton EnglishToMorseButton;
-    private final JLabel English;
-    private final JLabel Morse;
-    private final JButton MorseToEnglishButton;
+    private final JButton englishToMorseButton;
+    private final JLabel english;
+    private final JLabel morse;
+    private final JButton morseToEnglishButton;
     private  final JPanel verticalPanel;
 
     public MorseCodeFrame()
@@ -31,29 +31,29 @@ public class MorseCodeFrame extends JFrame
         verticalPanel.setLayout(new BoxLayout(verticalPanel,BoxLayout.Y_AXIS));
         add(verticalPanel);
 
-        English = new JLabel();
-        English.setText("English");
-        English.setPreferredSize(new Dimension(120, 60));
-        verticalPanel.add(English);
+        english = new JLabel();
+        english.setText("English");
+        english.setPreferredSize(new Dimension(120, 60));
+        verticalPanel.add(english);
 
         inputEnglishField = new JTextField();
         inputEnglishField.setPreferredSize(new Dimension(120,60));
         verticalPanel.add(inputEnglishField);
 
-        EnglishToMorseButton = new JButton("Translate English to Morse");
-        EnglishToMorseButton.setPreferredSize(new Dimension(180,60));
-        EnglishToMorseButton.addActionListener(this::translateToMorse);
-        verticalPanel.add(EnglishToMorseButton);
+        englishToMorseButton = new JButton("Translate English to Morse");
+        englishToMorseButton.setPreferredSize(new Dimension(180,60));
+        englishToMorseButton.addActionListener(this::translateToMorse);
+        verticalPanel.add(englishToMorseButton);
 
-        MorseToEnglishButton = new JButton("Translate Morse to English");
-        MorseToEnglishButton.setPreferredSize(new Dimension(180,60));
-        MorseToEnglishButton.addActionListener(this::translateToEnglish);
-        verticalPanel.add(MorseToEnglishButton);
+        morseToEnglishButton = new JButton("Translate Morse to English");
+        morseToEnglishButton.setPreferredSize(new Dimension(180,60));
+        morseToEnglishButton.addActionListener(this::translateToEnglish);
+        verticalPanel.add(morseToEnglishButton);
 
-        Morse = new JLabel();
-        Morse.setText("Morse");
-        Morse.setPreferredSize(new Dimension(120, 60));
-        verticalPanel.add(Morse);
+        morse = new JLabel();
+        morse.setText("Morse");
+        morse.setPreferredSize(new Dimension(120, 60));
+        verticalPanel.add(morse);
 
         inputMorseField = new JTextField();
         inputMorseField.setPreferredSize(new Dimension(120,60));
@@ -62,12 +62,12 @@ public class MorseCodeFrame extends JFrame
 
     private void translateToEnglish(ActionEvent actionEvent)
     {
-        presenter.MtoE(inputMorseField.getText());
+        presenter.MorseToEnglish(inputMorseField.getText());
     }
 
     private void translateToMorse(ActionEvent actionEvent)
     {
-        presenter.EtoM(inputEnglishField.getText());
+        presenter.EnglishToMorse(inputEnglishField.getText());
     }
 
     public static void main(String[] args) {
@@ -80,8 +80,8 @@ public class MorseCodeFrame extends JFrame
         inputMorseField.setText(morse);
     }
 
-    public void setEnglish(String ABC)
+    public void setEnglish(String english)
     {
-        inputEnglishField.setText(ABC);
+        inputEnglishField.setText(english);
     }
 }

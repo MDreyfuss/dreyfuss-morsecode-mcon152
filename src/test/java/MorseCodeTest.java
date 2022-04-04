@@ -17,10 +17,10 @@ class MorseCodeTest {
         Mockito.doReturn(".-..").when(conversion).getMorse("l");
         Mockito.doReturn("---").when(conversion).getMorse("o");
         Mockito.doReturn(".-").when(conversion).getMorse("a");
-        //when
         String input = "hello, all";
-        //then
         String code = ".... . .-.. .-.. --- .- .-.. .-..";
+        //when
+        //then
         assertEquals(code, morseCode.convertToMorse(input));
     }
 
@@ -31,10 +31,10 @@ class MorseCodeTest {
         Mockito.doReturn("L").when(conversion).getLetter(".-..");
         Mockito.doReturn("O").when(conversion).getLetter("---");
         Mockito.doReturn("A").when(conversion).getLetter(".-");
-        //when
         String input = ".... . .-.. .-.. --- .- .-.. .-..";
-        //then
         String result = "HELLOALL";
+        //when
+        //then
         assertEquals(result, morseCode.convertToABC(input));
     }
 }

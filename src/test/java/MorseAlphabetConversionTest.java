@@ -9,8 +9,8 @@ class MorseAlphabetConversionTest {
     {
         //given
         MorseAlphabetConversion conversion = new MorseAlphabetConversion();
-        //when
         String a = "a";
+        //when
         //then
         assertEquals(".-", conversion.getMorse(a));
     }
@@ -20,8 +20,8 @@ class MorseAlphabetConversionTest {
     {
         //given
         MorseAlphabetConversion conversion = new MorseAlphabetConversion();
-        //when
         String b = "-...";
+        //when
         //then
         assertEquals("B", conversion.getLetter(b));
     }
