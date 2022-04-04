@@ -17,7 +17,7 @@ class MorseCodePresenterTest {
         String morse = ".- -... -.-.";
         Mockito.doReturn(morse).when(model).convertToMorse(eng);
         //when
-        presenter.EnglishToMorse(eng);
+        presenter.englishToMorse(eng);
         //then
         verify(model).convertToMorse(eng);
         verify(frame).setMorse(morse);
@@ -31,7 +31,7 @@ class MorseCodePresenterTest {
         String morse = ".- -... -.-.";
         Mockito.doReturn(eng).when(model).convertToABC(morse);
         //when
-        presenter.MorseToEnglish(morse);
+        presenter.morseToEnglish(morse);
         //then
         verify(model).convertToABC(morse);
         verify(frame).setEnglish(eng);

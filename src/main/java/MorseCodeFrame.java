@@ -62,12 +62,12 @@ public class MorseCodeFrame extends JFrame
 
     private void translateToEnglish(ActionEvent actionEvent)
     {
-        presenter.MorseToEnglish(inputMorseField.getText());
+        presenter.morseToEnglish(inputMorseField.getText());
     }
 
     private void translateToMorse(ActionEvent actionEvent)
     {
-        presenter.EnglishToMorse(inputEnglishField.getText());
+        presenter.englishToMorse(inputEnglishField.getText());
     }
 
     public static void main(String[] args) {

@@ -7,12 +7,12 @@ public class MorseCodePresenter
         this.model = model;
         this.frame = frame;
     }
-    public void EnglishToMorse(String english)
+    public void englishToMorse(String english)
     {
         frame.setMorse(model.convertToMorse(english));
     }
 
-    public void MorseToEnglish(String morse)
+    public void morseToEnglish(String morse)
     {
         frame.setEnglish(model.convertToABC(morse));
     }

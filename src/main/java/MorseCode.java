@@ -23,15 +23,15 @@ public class MorseCode
     public String convertToABC(String input)
     {
         String[] inputList = input.split(" ");
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (String morseLetter : inputList)
         {
             String letterEquivalent = conversion.getLetter(morseLetter);
             if (letterEquivalent != null)
             {
-                result += letterEquivalent;
+                result.append(letterEquivalent);
             }
         }
-        return result;
+        return String.valueOf(result);
     }
 }
