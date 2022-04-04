@@ -32,6 +32,6 @@ public class MorseCode
                 result.append(letterEquivalent);
             }
         }
-        return String.valueOf(result);
+        return result.toString();
     }
 }
